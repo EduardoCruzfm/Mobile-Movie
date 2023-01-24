@@ -1,0 +1,19 @@
+{
+  "name": "consumo-api-rest2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EduardoCruzfm/Mobile-Movie.git"
+  },
+  "author": "@Eduardo Cruzfm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EduardoCruzfm/Mobile-Movie/issues"
+  },
+  "homepage": "https://github.com/EduardoCruzfm/Mobile-Movie#readme"
+}
