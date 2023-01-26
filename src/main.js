@@ -36,4 +36,46 @@ async function getTrendingMoviesPreview() {
     });
     
 }
+
+async function getCategoriesPreview() {
+    const res = await fetch("https://api.themoviedb.org/3/genre/movie/list?api_key=" + API_KEY);
+    const data = await res.json();
+
+    const categories = data.genres;
+    console.log({data,categories});
+    
+    categories.forEach(category => {
+
+        // Seleccionamos el secction contenedor(padre) por #ID y y al article
+        // contenedor (hijo) por .CLASE donde lo inyectaremos con un appen
+        const previewCategoriesContainer = document.querySelector
+        ("#categoriesPreview .categoriesPreview-list");
+
+        // Creamos etiquetas Html y le inyectamos las clases
+        const categoryContainer = document.createElement("div");
+        categoryContainer.classList.add("category-container");
+
+        const categoryTitle = document.createElement("h3");
+        categoryTitle.classList.add("category-title");
+
+        // Le agregamos un atributo (tipo de atributo, volor del atributo) 
+        categoryTitle.setAttribute("id","id" + category.id);
+
+        // Creamos un text con el nombre que viene de la peticion 200
+        const categoryTitleText = document.createTextNode(category.name)
+
+        // Inyectamos a categoryTitleText al contenedor categoryTitle (Agregamos el nombre)
+        categoryTitle.appendChild(categoryTitleText);
+
+        // Inyectamos a categoryTitle al contenedor categoryContainer(text al div)
+        categoryContainer.appendChild(categoryTitle);
+
+        // Inyectamos el div al contenedor padre
+        previewCategoriesContainer.appendChild(categoryContainer);
+        
+    });
+    
+}
+
 getTrendingMoviesPreview();
+getCategoriesPreview();
