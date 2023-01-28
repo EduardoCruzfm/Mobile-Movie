@@ -21,7 +21,7 @@ async function getTrendingMoviesPreview() {
 
         // Seleccionamos el secction contenedor(padre) por #ID y y al article
         // contenedor (hijo) por .CLASE donde lo inyectaremos con un appen
-        const trendingPreviewMoviesContainer = document.querySelector
+        const trendingPreviewSection = document.querySelector
         ("#trendingPreview .trendingPreview-movieList");
 
         // Creamos etiquetas Html y le inyectamos las clases
@@ -43,8 +43,8 @@ async function getTrendingMoviesPreview() {
         movieContainer.appendChild(movieImg);
 
         // Inyectamos movieContainer(div) al contenedor 
-        // trendingPreviewMoviesContainer(article)
-        trendingPreviewMoviesContainer.appendChild(movieContainer);
+        // trendingPreviewSection(article)
+        trendingPreviewSection.appendChild(movieContainer);
     });
     
 }
@@ -55,13 +55,13 @@ async function getCategoriesPreview() {
 
     const { data } = await api("genre/movie/list");
     const categories = data.genres;
-    console.log({data,categories});
+    // console.log({data,categories});
     
     categories.forEach(category => {
 
         // Seleccionamos el secction contenedor(padre) por #ID y y al article
         // contenedor (hijo) por .CLASE donde lo inyectaremos con un appen
-        const previewCategoriesContainer = document.querySelector
+        const categoriesPreviewSection = document.querySelector
         ("#categoriesPreview .categoriesPreview-list");
 
         // Creamos etiquetas Html y le inyectamos las clases
@@ -84,11 +84,8 @@ async function getCategoriesPreview() {
         categoryContainer.appendChild(categoryTitle);
 
         // Inyectamos el div al contenedor padre
-        previewCategoriesContainer.appendChild(categoryContainer);
+        categoriesPreviewSection.appendChild(categoryContainer);
         
     });
     
 }
-
-getTrendingMoviesPreview();
-getCategoriesPreview();

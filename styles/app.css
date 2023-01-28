@@ -37,7 +37,7 @@ html {
 body {
   /* background-color: var(--black-body-1); */
   background-color: rgb(2, 2, 2);
-  color: var(--purple-dark-2);
+  color: var(--black-low-2);
   font-family: var(--font-family-text);
   font-weight: var(--font-weight-text1);
   font-size: 16px;
@@ -157,8 +157,8 @@ button {
   display: inline-block;
 }
 .header-arrow--white {
-  /* color: var(--purple-light-1); */
-  color: var(--black-low-2);
+  color: var(--purple-light-1);
+  /* color: var(--black-low-2); */
 }
 
 .header-searchForm {
@@ -293,7 +293,7 @@ button {
   z-index: 1;
   position: absolute;
   /* background-color: var(--purple-light-1); */
-  background-color: var(--black-low-2);
+  background-color: black;
 }
 
 .movieDetail-title {
