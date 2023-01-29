@@ -67,6 +67,19 @@ function categiriesPage() {
     categoriesPreviewSection.classList.add("inactive");//Ocultamos categorias
     genericSection.classList.remove("inactive");//Mostramos resultados de busqueda
     movieDetailSection.classList.add("inactive");//Ocultamos detalles de la pelicula
+
+    // Posicion actual de pagina #
+    /*  const url =location.hash.split("="); // .split => ["category", "id-name"]
+    const urlPage = url[0];//category
+    const urlData = url[1];//id-name */
+
+    // Destructuramos el array
+    const [_,categoryData] = location.hash.split("=");
+    const[categoryId,categoryName] = categoryData.split("-");
+
+    headerCategoryTitle.innerHTML = categoryName;
+
+    getMoviesByCategory(categoryId);// category=10751-Family => 10751 "id"
 }
 
 function movieDetailsPage() {
